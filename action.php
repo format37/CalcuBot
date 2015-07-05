@@ -3,7 +3,7 @@
 function checkRequest($req)
 {
 	//todo: sin,cos,pow
-	$grantedSymbols = array('0','1','2','3','4','5','6','7','8','9','+','-','/','*','.','(',')',' ');
+	$grantedSymbols = array('0','1','2','3','4','5','6','7','8','9','+','-','/','*','.','(',')',' ','s','i','n','c','o');
 	$querySymbols	= str_split($req);
 	$passed = true;
 	$len = mb_strlen($req);
@@ -39,7 +39,7 @@ $token		= 'SECRET_TOKEN';
 
 if ($message=='/help@CalcuBot'||$message=='/help') 
 	{
-	$AnswerText	= "Hi! im console calculator.%0aAsk me in group chat like this:%0a/cl 4-(3+2)/3%0aor in private session is simply:%0a4-(3+2)/3%0aSupported symbols:%200 1 2 3 4 5 6 7 8 9 + - / * . , ( )%0afunctions sin,cos,pow is coming soon!";
+	$AnswerText	= "Hi! im console calculator.%0aAsk me in group chat like this:%0a/cl 4-(3+sin(2))/3%0aor in private session is simply:%0a4-(cos(3)+2)/3%0aSupported symbols:%200 1 2 3 4 5 6 7 8 9 + - / * . , ( )%0aSupported functions: sin,cos";
 	file_get_contents('https://api.telegram.org/bot'.$token.'/sendMessage?chat_id='.$chat.'&text='.prepareStringForReturn($AnswerText));
 	}
 	
