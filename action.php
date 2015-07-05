@@ -28,14 +28,18 @@ function prepareStringForReturn($value)
 
 $json = file_get_contents('php://input');
 $action = json_decode($json, true);
-//file_put_contents('log.txt',$action['message']['chat']['id']."#".$action['message']['text']."\n",FILE_APPEND);
+
+//file_put_contents('log.txt', 'this: '.var_export($action,true).' #',FILE_APPEND);
+
+//file_put_contents('log.txt',var_export($action,true)."\n",FILE_APPEND);
 $message	= $action['message']['text'];
 $chat		= $action['message']['chat']['id'];
+$user		= $action['message']['from']['id'];
 $token		= 'SECRET_TOKEN';
 
 if ($message=='/help@CalcuBot'||$message=='/help') 
 	{
-	$AnswerText	= "Hi! im console calculator.%0aAsk me like this: /cl4-(3+2)/3%0aSupported symbols:%200 1 2 3 4 5 6 7 8 9 + - / * . , ( )%0afunctions sin,cos,pow is coming soon!";
+	$AnswerText	= "Hi! im console calculator.%0aAsk me in group chat like this:%0a/cl 4-(3+2)/3%0aor in private session is simply:%0a4-(3+2)/3%0aSupported symbols:%200 1 2 3 4 5 6 7 8 9 + - / * . , ( )%0afunctions sin,cos,pow is coming soon!";
 	file_get_contents('https://api.telegram.org/bot'.$token.'/sendMessage?chat_id='.$chat.'&text='.prepareStringForReturn($AnswerText));
 	}
 	
@@ -51,7 +55,7 @@ if (substr($message,0,3)=='/cl') $crop=3;
 $source = substr($message,$crop);
 $source	= str_replace(',','.',$source);
 $badRequest	= false;
-if ($crop) 
+if ($crop||($chat==$user&&substr($message,0,1)!='/')) 
 	{
 	if (checkRequest($source)) 
 		{
