@@ -1,0 +1,23 @@
+array (
+ 'update_id' => 330573330,
+ 'message' => 
+ array (
+ 'message_id' => 18,
+ 'from' => 
+ array (
+ 'id' => 106129214,
+ 'first_name' => 'Alexey',
+ 'last_name' => 'Yurasov',
+ 'username' => 'AlexMoscow',
+ ),
+ 'chat' => 
+ array (
+ 'id' => 106129214,
+ 'first_name' => 'Alexey',
+ 'last_name' => 'Yurasov',
+ 'username' => 'AlexMoscow',
+ ),
+ 'date' => 1436119857,
+ 'text' => '89',
+ ),
+)
