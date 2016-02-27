@@ -1,11 +1,7 @@
-# CalcuBot
-console calculator on Telegram Bot API via webHooks, PHP, SSL
-https://telegram.me/calcubot
+console calculator on Telegram via Bot webHooks API, PHP, SSL https://telegram.me/calcubot
 
-1. купить у провайдера доменное имя, хостинг и SSL сертификат
-2. разместить там скрипт
-3. установить через адресную строку webhook (это проще чем может показаться) есть специальная команда setWebhook. Это свяжет бота со скриптом. в скрипте описано как он получает данные из бота и как возвращает обратно
-
-Сколько стоит?
-
-в 1000р уложишься. можно конечно не покупать - но тогда соответствующий узел придется разворачивать своими руками - что для меня лично большая головная боль
+1. buy from your ISP a domain name, hosting and SSL certificate
+2. post PHP script on a web
+3. set through the address bar webhook (it's easier than you may think) have a dedicated team setWebhook. It connects the bot with the script. in the script described how it obtains data from the bot and how returns back
+How much is it?
+$15 will fit. you can certainly not buy, but then the corresponding node would have to be mounted with his own hands - which for me personally is a big headache
