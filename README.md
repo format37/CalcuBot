@@ -9,5 +9,5 @@ Install curl
 Add domain in etc/hosts:   
 ```sudo nano /etc/hosts```   
 127.0.0.1 localhost yourdomain.com   
-```sudo apt install php7.4-mbstring   
-sudo systemctl restart apache2```
+```sudo apt install php7.4-mbstring```   
+```sudo systemctl restart apache2```   
